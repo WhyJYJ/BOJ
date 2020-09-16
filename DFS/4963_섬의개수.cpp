@@ -14,7 +14,8 @@ void DFS(int y, int x) {
 	for(int i=0;i<8;i++) {
 		nx = x + dx[i];
 		ny = y + dy[i];
-		// 아래 조건에서 return 하면 안 됌. continue 해야 함!! 
+		// return(x) continue(o)
+		// if return => DFS stops
 		if(nx>=w || nx<0 || ny>=h || ny<0) continue;
 		if(visited[ny][nx] == 0 && map[ny][nx] == 1) DFS(ny, nx);
 	}
