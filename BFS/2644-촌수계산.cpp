@@ -28,13 +28,13 @@ public:
     // 너비 우선 탐색
     int bfs(int n1, int n2){
     	int result=0;
-    	int cnt=0; // 동일 촌수 개수 
         vector<bool> visited(N+1, false); // 방문 여부를 저장하는 배열
         queue<int> Q;
         Q.push(n1);
         visited[n1] = true;
         // 탐색 시작
         while(!Q.empty()){
+        	// 동일 촌수의 수를 구하기 위해 
         	int q_size = Q.size();
         	while(q_size--) {
         		int curr = Q.front();
@@ -47,6 +47,7 @@ public:
                 	} 
             	}
 			}
+			// 동일 촌수 끝나면 촌수 + 1  
 			result+=1;
         }
         return -1;
